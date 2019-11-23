@@ -1,0 +1,37 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'LambdaLayers
+
+  Sample SAM Template for LambdaLayers
+
+  '
+Globals:
+  Function:
+    Timeout: 5
+Resources:
+  Service1Function:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://vashi-lambda-code/111e0457bbaf71a23da8a7efa07ab96b
+      Handler: service1.lambda_handler
+      Runtime: python3.7
+      Layers:
+      - Ref: CustomCodeLayer
+  Service2Function:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://vashi-lambda-code/111e0457bbaf71a23da8a7efa07ab96b
+      Handler: service2.lambda_handler
+      Runtime: python3.7
+      Layers:
+      - Ref: CustomCodeLayer
+  CustomCodeLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: CustomCodeLayer
+      Description: Layer with customer code
+      ContentUri: s3://vashi-lambda-code/24fb953d7339c0cfe532c5c7a4d6b4a3
+      CompatibleRuntimes:
+      - python3.7
+      LicenseInfo: Available under the MIT-0 license.
+      RetentionPolicy: Retain
