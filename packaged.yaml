@@ -12,7 +12,7 @@ Resources:
   Service1Function:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://vashi-lambda-code/111e0457bbaf71a23da8a7efa07ab96b
+      CodeUri: s3://vashi-lambda-code/fedd37a74bf7686de53cb15f7fcd19f4
       Handler: service1.lambda_handler
       Runtime: python3.7
       Layers:
@@ -20,7 +20,7 @@ Resources:
   Service2Function:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://vashi-lambda-code/111e0457bbaf71a23da8a7efa07ab96b
+      CodeUri: s3://vashi-lambda-code/fedd37a74bf7686de53cb15f7fcd19f4
       Handler: service2.lambda_handler
       Runtime: python3.7
       Layers:
@@ -30,7 +30,7 @@ Resources:
     Properties:
       LayerName: CustomCodeLayer
       Description: Layer with customer code
-      ContentUri: s3://vashi-lambda-code/24fb953d7339c0cfe532c5c7a4d6b4a3
+      ContentUri: s3://vashi-lambda-code/47a398f1434d13c19466d6e7e3678765
       CompatibleRuntimes:
       - python3.7
       LicenseInfo: Available under the MIT-0 license.
